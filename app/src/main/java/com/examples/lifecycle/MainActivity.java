@@ -3,6 +3,7 @@ package com.examples.lifecycle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("Called onCreate");
         /// making toast to show the result as pop-up
         Toast.makeText(this, "Called onCreate", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onCreate Called");
     }
 
     /// invoke when an activity entered into Started State by completing onCreate() method
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Toast.makeText(this, "Called onStart", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onStart Called");
     }
 
     /// when in resume state
@@ -34,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Toast.makeText(this, "Called onResume", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onResume Called");
     }
 
     /// when activity is being paused
     @Override
     protected void onPause() {
-        super.onPause();Toast.makeText(this, "Called onPause", Toast.LENGTH_SHORT).show();
+        super.onPause();
+        Toast.makeText(this, "Called onPause", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onPause Called");
     }
 
     /// activity no longer visible to user
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Toast.makeText(this, "Called onStop", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onStop Called");
     }
 
     /// restarting an activity after stop
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Toast.makeText(this, "Called onRestart", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onRestart Called");
     }
 
     /// final callback and destroy the activity
@@ -61,5 +69,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(this, "Called onDestroy", Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onDestroy Called");
     }
 }
